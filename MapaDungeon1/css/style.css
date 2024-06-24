@@ -118,3 +118,70 @@ a {
   border-bottom: none;
   border-right: 1px solid #000;
 }
+
+.cell-dungeon-value-1 {
+  background-color: blue;
+}
+
+.cell-dungeon-value-10 {
+  background-color: #FFFFFF
+}
+
+.cell-dungeon-value-99 {
+  background-color: #888887;;
+}
+
+.cell-dungeon-value-100 {
+  background-color: #000;
+}
+
+.cell-dungeon-value-pingente-1 {
+  background-image: url('../../assets/img/img-pingente-azul.png');
+  background-size: cover;
+}
+
+.cell-dungeon-value-pingente-2 {
+  background-image: url('../../assets/img/img-pingente-verde.png');
+  background-size: cover;
+
+}
+
+.cell-dungeon-value-pingente-3 {
+  background-image: url('../../assets/img/img-pingente-vermelho.png');
+  background-size: cover;
+}
+
+.painel-resultados {
+  right: 0;
+}
+
+.painel-resultados-content {
+  display: block;
+  height: 500px;
+  font-family: 'REGGAE ONE';
+  font-size: 20px;
+  background-color: #800080;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.mapa-celula-posicao-atual-caminho-ida {
+  background-image: url('../../assets/img/img-link.png');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+}
+
+.mapa-celula-posicao-atual {
+  background-image: url('../../assets/img/img-link.png');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+}
+
+.mapa-celula-caminho-percorrido-ida {
+  background-color: #D0F0F8;
+}
+
+.mapa-celula-caminho-percorrido {
+  background-color: blue;
+}
