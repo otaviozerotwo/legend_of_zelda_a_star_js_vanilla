@@ -83,14 +83,14 @@ a {
   padding: 0px 0px 20px 0px;
 }
 
-.mapa-principal-container {
+.mapa-dungeon-container {
   display: grid;
-  grid-template-columns: repeat(42, 13px);
-  grid-template-rows: repeat(42, 13px);
+  grid-template-columns: repeat(28, 13px);
+  grid-template-rows: repeat(28, 13px);
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+  
 .mapa-linha {
   display: block;
 }
@@ -103,7 +103,7 @@ a {
 }
 
 .mapa-celula:not(:last-child) {
-  border-right: none;
+  border-right: none; 
 }
 
 .mapa-linha:not(:last-child) .mapa-celula {
@@ -117,79 +117,4 @@ a {
 .mapa-linha:last-of-type .mapa-celula {
   border-bottom: none;
   border-right: 1px solid #000;
-}
-
-.cell-hyrule-entrada-lost-woods {
-  background-image: url('../../assets/img/img-entrada-lost-woods.png');
-  background-size: cover;
-}
-
-.cell-hyrule-link-house {
-  background-image: url('../../assets/img/img-links-house.png');
-  background-size: cover;
-}
-
-.cell-hyrule-master-sword {
-  background-image: url('../../assets/img/img-master-sword.png');
-  background-size: cover;
-}
-
-.cell-hyrule-value-0 {
-  background-image: url('../../assets/img/img-entrada-dungeon.png');
-  background-size: cover;
-}
-
-.cell-hyrule-value-10 {
-  background-color: #92D050;
-}
-
-.cell-hyrule-value-20 {
-  background-color: #C4BC96;
-}
-
-.cell-hyrule-value-100 {
-  background-color: #00B050;
-}
-
-.cell-hyrule-value-150 {
-  background-color: #948A54;
-}
-
-.cell-hyrule-value-180 {
-  background-color: #548DD4;
-}
-
-.painel-resultados {
-  right: 0;
-}
-
-.painel-resultados-content {
-  display: block;
-  height: 500px;
-  font-family: 'REGGAE ONE';
-  font-size: 20px;
-  background-color: #800080;
-  color: #fff;
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-
-.mapa-celula-posicao-atual-caminho-ida {
-  background-image: url('../../assets/img/img-link.png');
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-}
-
-.mapa-celula-posicao-atual {
-  background-image: url('../../assets/img/img-link.png');
-  background-size: 15px 15px;
-  background-repeat: no-repeat;
-}
-
-.mapa-celula-caminho-percorrido-ida {
-  background-color: #D0F0F8;
-}
-
-.mapa-celula-caminho-percorrido {
-  background-color: blue;
 }

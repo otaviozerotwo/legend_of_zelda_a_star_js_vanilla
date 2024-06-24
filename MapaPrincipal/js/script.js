@@ -809,15 +809,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entradaMaisProxima.x === 39 && entradaMaisProxima.y === 17) {
         startNode = { x: 14, y: 26 };
         endNode = { x: 13, y: 3 };
-        window.location.href = '/dungeon_1';
+        window.location.href = '../../MapaDungeon1/mapaDungeon1.html';
       } else if (entradaMaisProxima.x === 24 && entradaMaisProxima.y === 1) {
         startNode = { x: 13, y: 25 };
         endNode = { x: 13, y: 2 };
-        window.location.href = '/dungeon_2';
+        window.location.href = '../../MapaDungeon1/mapaDungeon2.html';
       } else if (entradaMaisProxima.x === 5 && entradaMaisProxima.y === 32) {
         startNode = { x: 14, y: 25 };
         endNode = { x: 15, y: 19 };
-        window.location.href = '/dungeon_3';
+        window.location.href = '../../MapaDungeon1/mapaDungeon3.html';
       }
     }
   }
