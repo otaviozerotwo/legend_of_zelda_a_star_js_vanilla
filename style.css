@@ -1,0 +1,78 @@
+@import './assets/fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #D1C368;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1,
+h2 {
+  font-family: 'HYLIA SERIF';
+  color: #c1232d;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+a {
+  text-decoration: none;
+  width: 350px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 50px;
+  font-size: 36px;
+  font-family: 'REGGAE ONE';
+  color: #FFF;
+  background-color: #800080;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #640564;
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 24px
+  }
+
+  a {
+    width: 60%;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,196 @@
+@import '../../assets/fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #D1C368;
+}
+
+@media (max-width: 1090px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-acoes,
+  .painel-resultados {
+    width: 50% !important;
+  }
+
+  .menu-acoes,
+  .mapa-container,
+  .painel-resultados {
+    position: relative !important;
+    justify-content: center;
+  }
+}
+
+.menu-acoes,
+.painel-resultados {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  position: fixed;
+  margin: 0px 20px;
+}
+
+.menu-acoes {
+  left: 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'REGGAE ONE';
+  color: #FFF;
+  background-color: #7B79C6;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6765A6;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.mapa-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  font-family: 'HYLIA SERIF';
+  padding: 20px 0px;
+  color: #c1232d;
+  text-align: center;
+}
+
+.mapa-container .titulo {
+  padding: 0px 0px 20px 0px;
+}
+
+.mapa-principal-container {
+  display: grid;
+  grid-template-columns: repeat(42, 13px);
+  grid-template-rows: repeat(42, 13px);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.mapa-linha {
+  display: block;
+}
+
+.mapa-celula {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #000;
+  line-height: 7px;
+}
+
+.mapa-celula:not(:last-child) {
+  border-right: none;
+}
+
+.mapa-linha:not(:last-child) .mapa-celula {
+  border-bottom: none;
+}
+
+.mapa-celula:last-of-type {
+  border-right: none;
+}
+
+.mapa-linha:last-of-type .mapa-celula {
+  border-bottom: none;
+  border-right: 1px solid #000;
+}
+
+.cell-hyrule-entrada-lost-woods {
+  background-image: url('../../assets/img/img-entrada-lost-woods.png');
+  background-size: cover;
+}
+
+.cell-hyrule-link-house {
+  background-image: url('../../assets/img/img-links-house.png');
+  background-size: cover;
+}
+
+.cell-hyrule-master-sword {
+  background-image: url('../../assets/img/img-master-sword.png');
+  background-size: cover;
+}
+
+.cell-hyrule-value-0 {
+  background-image: url('../../assets/img/img-entrada-dungeon.png');
+  background-size: cover;
+}
+
+.cell-hyrule-value-10 {
+  background-color: #92D050;
+}
+
+.cell-hyrule-value-20 {
+  background-color: #C4BC96;
+}
+
+.cell-hyrule-value-100 {
+  background-color: #00B050;
+}
+
+.cell-hyrule-value-150 {
+  background-color: #948A54;
+}
+
+.cell-hyrule-value-180 {
+  background-color: #548DD4;
+}
+
+.painel-resultados {
+  right: 0;
+}
+
+.painel-resultados-content {
+  display: block;
+  height: 500px;
+  font-family: 'REGGAE ONE';
+  font-size: 20px;
+  background-color: #800080;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.mapa-celula-posicao-atual-caminho-ida {
+  background-image: url('../../assets/img/img-link.png');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+}
+
+.mapa-celula-posicao-atual {
+  background-image: url('../../assets/img/img-link.png');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+}
+
+.mapa-celula-caminho-percorrido-ida {
+  background-color: #D0F0F8;
+}
+
+.mapa-celula-caminho-percorrido {
+  background-color: blue;
+}

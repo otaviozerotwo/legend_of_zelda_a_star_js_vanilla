@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'HYLIA SERIF';
+  src: local('HYLIA SERIF'), url('./fonts/HyliaSerifBeta-Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TRIFORCE';
+  src: local('TRIFORCE'), url('./fonts/Triforce.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'REGGAE ONE';
+  src: local('REGGAE ONE'), url('./fonts/ReggaeOne-Regular.ttf') format('truetype');
+}
