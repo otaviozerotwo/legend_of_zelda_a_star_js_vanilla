@@ -605,10 +605,14 @@ document.addEventListener('DOMContentLoaded', () => {
       row.forEach((cell, cellIndex) => {
         const cellDiv = document.createElement('div');
         const className = atribuirClassNameParaCelula(cell);
-        const isCelulaAtual = celulaAtualIndexIda < (caminhoIda.length - 1) && caminhoIda[celulaAtualIndexIda]?.x === rowIndex && caminhoIda[celulaAtualIndexIda]?.y === cellIndex;
+        
+        const isCelulaAtualCaminhoIda = celulaAtualIndexIda < (caminhoIda.length - 1) && caminhoIda[celulaAtualIndexIda]?.x === rowIndex && caminhoIda[celulaAtualIndexIda]?.y === cellIndex;
+        
+        const isCelulaAtualCaminhoVolta = celulaAtualIndexVolta < (caminhoVolta.length - 1) && caminhoVolta[celulaAtualIndexIda]?.x === rowIndex && caminhoVolta[celulaAtualIndexVolta]?.y === cellIndex;
+
         const isCelulaPercorrida = celulasPercorridas[rowIndex][cellIndex];
   
-        cellDiv.className = `mapa-celula ${className} ${isCelulaAtual ? 'mapa-celula-posicao-atual-caminho-ida' : ''} ${isCelulaPercorrida ? 'mapa-celula-caminho-percorrido-ida' : ''}`;
+        cellDiv.className = `mapa-celula ${className} ${isCelulaPercorrida ? 'mapa-celula-caminho-percorrido' : ''} ${isCelulaAtualCaminhoIda ? 'mapa-celula-posicao-atual' : ''} ${isCelulaAtualCaminhoVolta ? 'mapa-celula-posicao-atual' : ''}`;
         rowDiv.appendChild(cellDiv);
       });
       container.appendChild(rowDiv);
@@ -631,10 +635,23 @@ document.addEventListener('DOMContentLoaded', () => {
           fimDeJogo = true;
           atualizarResultados();
         }
+      } else if (celulaAtualIndexVolta < (caminhoVolta.length - 1)) {
+        const currentNode = caminhoVolta[celulaAtualIndexVolta];
+        celulaAtualIndexVolta++;
+        custoTotal += currentNode.weight || 1;
+        celulasPercorridas[currentNode.x][currentNode.y] = true;
+        atualizarMapa();
+  
+        if (currentNode.x === endNode.x && currentNode.y === endNode.y) {
+          clearInterval(interval);
+          fimDeJogo = true;
+          atualizarResultados();
+        }
       } else {
         clearInterval(interval);
-      }
+      } 
     }, 200);
+
   }
   
   // Atualiza os resultados no DOM
@@ -653,7 +670,29 @@ document.addEventListener('DOMContentLoaded', () => {
     iniciarPercurso();
   }
 
+  function voltarEntrada() {
+    if (caminhoIda.length > 0) {
+      celulasPercorridas = Array.from({ length: grid.length }, () => Array(grid[0].length).fill(false));
+
+      percorrerMapaClicado = false;
+      sairDungeonClicado = true;
+
+      const novoStartNode = endNode;
+      const novoEndNode = startNode;
+
+      // Executa a busca A* e armazena o resultado em caminhoVolta
+      caminhoVolta = astar.search(graph, graph.grid[novoStartNode.x][novoStartNode.y], graph.grid[novoEndNode.x][novoEndNode.y]);
+
+      // Atualiza os nós de início e fim
+      startNode = { x: 39, y: 17 };
+      endNode = { x: 6, y: 5 };
+
+      iniciarPercurso();
+    }
+  }
+
   document.getElementById('percorrerMapa').addEventListener('click', percorrerMapa);
+  document.getElementById('voltarEntrada').addEventListener('click', voltarEntrada);
 
   // Função inicial para configurar a grid e mostrar no DOM
   atualizarMapa();
