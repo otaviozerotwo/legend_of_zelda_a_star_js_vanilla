@@ -693,6 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('percorrerMapa').addEventListener('click', percorrerMapa);
   document.getElementById('voltarEntrada').addEventListener('click', voltarEntrada);
+  document.getElementById('sairDungeon').addEventListener('click', sairDungeon);
 
   // Função inicial para configurar a grid e mostrar no DOM
   atualizarMapa();
