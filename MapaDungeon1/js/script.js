@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const isCelulaAtualCaminhoIda = celulaAtualIndexIda < (caminhoIda.length - 1) && caminhoIda[celulaAtualIndexIda]?.x === rowIndex && caminhoIda[celulaAtualIndexIda]?.y === cellIndex;
         
-        const isCelulaAtualCaminhoVolta = celulaAtualIndexVolta < (caminhoVolta.length - 1) && caminhoVolta[celulaAtualIndexIda]?.x === rowIndex && caminhoVolta[celulaAtualIndexVolta]?.y === cellIndex;
+        const isCelulaAtualCaminhoVolta = celulaAtualIndexVolta < (caminhoVolta.length - 1) && caminhoVolta[celulaAtualIndexVolta]?.x === rowIndex && caminhoVolta[celulaAtualIndexVolta]?.y === cellIndex;
 
         const isCelulaPercorrida = celulasPercorridas[rowIndex][cellIndex];
   
@@ -651,7 +651,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(interval);
       } 
     }, 200);
-
   }
   
   // Atualiza os resultados no DOM
@@ -684,10 +683,20 @@ document.addEventListener('DOMContentLoaded', () => {
       caminhoVolta = astar.search(graph, graph.grid[novoStartNode.x][novoStartNode.y], graph.grid[novoEndNode.x][novoEndNode.y]);
 
       // Atualiza os nós de início e fim
-      startNode = { x: 39, y: 17 };
-      endNode = { x: 6, y: 5 };
+      // startNode = { x: 39, y: 17 };
+      // endNode = { x: 6, y: 5 };
 
       iniciarPercurso();
+    } else {
+      alert('Colete o pingente no final da dungeon');
+    }
+  }
+
+  function sairDungeon() {
+    if (sairDungeonClicado) {
+      window.location.href = '../../MapaPrincipal/mapaPrincipal.html'
+    } else {
+      alert('Para sair é necessário pegar o pingente e retornar para a entrada');
     }
   }
 

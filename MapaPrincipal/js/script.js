@@ -819,6 +819,8 @@ document.addEventListener('DOMContentLoaded', () => {
         endNode = { x: 15, y: 19 };
         window.location.href = '../../MapaDungeon1/mapaDungeon3.html';
       }
+    } else {
+      alert('Encontre uma entrada de dungeon');
     }
   }
   
