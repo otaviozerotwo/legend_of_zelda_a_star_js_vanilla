@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Atualiza os resultados no DOM
   function atualizarResultados() {
     const resultadosDiv = document.getElementById('custoTotal');
-    resultadosDiv.innerHTML = `<span>${custoTotal}</span>`;
+    resultadosDiv.innerHTML = custoTotal;
   }
   
   // Função para iniciar a busca do caminho
