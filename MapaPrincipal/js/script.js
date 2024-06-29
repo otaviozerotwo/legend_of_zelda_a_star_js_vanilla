@@ -761,12 +761,12 @@ document.addEventListener('DOMContentLoaded', () => {
         custoTotal += currentNode.weight || 1;
         celulasPercorridas[currentNode.x][currentNode.y] = true;
         atualizarMapa();
-  
-        if (currentNode.x === endNode.x && currentNode.y === endNode.y) {
-          clearInterval(interval);
-          fimDeJogo = true;
-          atualizarResultados();
-        }
+        atualizarResultados();
+        // if (currentNode.x === endNode.x && currentNode.y === endNode.y) {
+        //   clearInterval(interval);
+        //   fimDeJogo = true;
+        //   atualizarResultados();
+        // }
       } else {
         clearInterval(interval);
       }
@@ -775,8 +775,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Atualiza os resultados no DOM
   function atualizarResultados() {
-    const resultadosDiv = document.getElementById('resultados');
-    resultadosDiv.innerHTML = `<p>Custo Total: ${custoTotal}</p><p>Fim de Jogo: ${fimDeJogo}</p>`;
+    const resultadosDiv = document.getElementById('custoTotal');
+    resultadosDiv.innerHTML = `<span>${custoTotal}</span>`;
   }
   
   // Função para iniciar a busca do caminho
